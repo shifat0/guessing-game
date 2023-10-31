@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+            integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Guess the number</title>
+        <style>
+            body,
+            form {
+                background-color: rgb(88, 84, 84);
+                color: white;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            #input {
+                min-width: 200px;
+            }
+
+            #help {
+                visibility: hidden;
+            }
+        </style>
+    </head>
+
+    <body class="container">
+        <h1>Guess The Number</h1>
+        <h6>Guess a number between (0 - 20)</h6>
+        <form id="form">
+            <input type="number" id="input">
+            <input id="guess-btn" class='button-primary' type="submit" value="Guess">
+            <span id="help">Number is <span id="hint"></span> your input</span>
+        </form>
+        <span>You got <span id="chance"></span> chances left</span>
+        <script src="script/script.js"></script>
+    </body>
+
+</html>
