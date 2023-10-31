@@ -19,6 +19,8 @@ function handleGuess(e) {
   let guessBtn = document.querySelector("#guess-btn");
   let help = document.querySelector("#help");
   let hint = document.querySelector("#hint");
+  let restart = document.querySelector("#restart");
+  restart.addEventListener("click", () => location.reload());
 
   if (input.value === "") alert("Please guess a number");
   else {
@@ -30,7 +32,10 @@ function handleGuess(e) {
       guessBtn.style.cursor = "not-allowed";
       input.disabled = true;
       input.style.cursor = "not-allowed";
-      setTimeout(() => alert("Yahoo! You won the guessing game"), 500);
+      setTimeout(() => {
+        alert("Yahoo! You won the guessing game");
+        restart.style.visibility = "visible";
+      }, 500);
     } else {
       +input.value < ans
         ? (hint.innerText = "greater than")
@@ -43,7 +48,10 @@ function handleGuess(e) {
         guessBtn.style.cursor = "not-allowed";
         input.disabled = true;
         input.style.cursor = "not-allowed";
-        setTimeout(() => alert("You lose! Try again"), 500);
+        setTimeout(() => {
+          restart.style.visibility = "visible";
+          alert("You lose! Try again");
+        }, 500);
       }
     }
   }
